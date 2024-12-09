@@ -15,12 +15,14 @@ Click nbfs://nbhost/SystemFileSystem/Templates/XML/XMLDocument.xml to edit this 
         <properties>
 
             <!-- H2 in-memory database -->
-            <property name="jakarta.persistence.jdbc.url"
+            <!--<property name="jakarta.persistence.jdbc.url"
                       value="jdbc:h2:mem:db1"/>
-
+-->
+            <property name="jakarta.persistence.jdbc.url"
+                      value="jdbc:postgresql://localhost:5432/hibernate6gradle"/>
             <!-- Credentials -->
             <property name="jakarta.persistence.jdbc.user"
-                      value="sa"/>
+                      value="postgres"/>
             <property name="jakarta.persistence.jdbc.password"
                       value=""/>
 

@@ -16,9 +16,9 @@ public class DemoApplication {
 		var sessionFactory = new Configuration()
                 .addAnnotatedClass(Book.class)
                 // use H2 in-memory database
-                .setProperty(URL, "jdbc:h2:mem:db1")
-                .setProperty(USER, "sa")
-                .setProperty(PASS, "")
+                .setProperty(URL, "jdbc:postgresql://localhost:5432/hibernate6gradle")
+                .setProperty(USER, "postgres")
+                .setProperty(PASS, "123")
                 // use Agroal connection pool
                 .setProperty("hibernate.agroal.maxSize", 20)
                 // display SQL in console

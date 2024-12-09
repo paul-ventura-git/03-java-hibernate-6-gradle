@@ -3,6 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
  */
 package com.hibernate.gradle.demo;
+import com.hibernate.gradle.demo.Book;
 
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
@@ -12,7 +13,7 @@ import java.util.function.Consumer;
 
 import static jakarta.persistence.Persistence.createEntityManagerFactory;
 import static java.lang.System.out;
-import static org.hibernate.cfg.AvailableSettings.JAKARTA_HBM2DDL_DATABASE_ACTION;
+import static org.hibernate.cfg.AvailableSettings.*;
 import static org.hibernate.tool.schema.Action.CREATE;
 
 /**
@@ -31,7 +32,7 @@ public class Main {
 
         // persist an entity
         inSession(factory, entityManager -> {
-            entityManager.persist(new Book("9781932394153", "Hibernate in Action"));
+            entityManager.persist(new Book("9781932394153", "Hibernate in Action FROM JPA"));
         });
 
         // query data using HQL
