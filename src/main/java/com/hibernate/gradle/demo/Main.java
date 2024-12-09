@@ -3,7 +3,6 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
  */
 package com.hibernate.gradle.demo;
-import com.hibernate.gradle.demo.Book;
 
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
@@ -41,6 +40,7 @@ public class Main {
         });
 
         // query data using criteria API
+        /*
         inSession(factory, entityManager -> {
             var builder = factory.getCriteriaBuilder();
             var query = builder.createQuery(String.class);
@@ -49,6 +49,7 @@ public class Main {
                     book.get(Book_.title)));
             out.println(entityManager.createQuery(query).getSingleResult());
         });
+        */
     }
 
     // do some work in a session, performing correct transaction management

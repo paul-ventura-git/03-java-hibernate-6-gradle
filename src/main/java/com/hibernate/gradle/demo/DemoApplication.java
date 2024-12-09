@@ -27,6 +27,8 @@ public class DemoApplication {
                 .setProperty(HIGHLIGHT_SQL, true)
                 .buildSessionFactory();
 
+                SpringApplication.run(DemoApplication.class, args);
+                /*
                 // export the inferred database schema
                 try{
                     sessionFactory.getSchemaManager().exportMappedObjects(true);
@@ -44,6 +46,7 @@ public class DemoApplication {
                 });
 
                 // query data using criteria API
+                /*
                 sessionFactory.inSession(session -> {
                     var builder = sessionFactory.getCriteriaBuilder();
                     var query = builder.createQuery(String.class);
@@ -52,6 +55,8 @@ public class DemoApplication {
                             book.get(Book_.title)));
                     out.println(session.createSelectionQuery(query).getSingleResult());
                 });
+                */
+                
 	}
 
 }
