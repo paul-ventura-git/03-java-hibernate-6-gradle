@@ -42,7 +42,9 @@ public class BookResource {
     
     @GetMapping("/books")
     public Book getBook(@RequestParam String isbn) {
+        System.out.println("**********************************"+isbn);
         var book = sessionFactory.fromTransaction(session -> session.find(Book.class, isbn));
+        System.out.println("+++++++++++++++++++++++++++++++++"+book.title);
         //return book == null ? null : book;
         return book;
     }
