@@ -14,7 +14,7 @@ import java.util.function.Consumer;
 import static jakarta.persistence.Persistence.createEntityManagerFactory;
 import static java.lang.System.out;
 import static org.hibernate.cfg.AvailableSettings.*;
-import static org.hibernate.tool.schema.Action.CREATE;
+import static org.hibernate.tool.schema.Action.UPDATE;
 
 /**
  *
@@ -28,7 +28,7 @@ public class Main {
     public static void main(String[] args) {
         var factory = createEntityManagerFactory("example",
                 // export the inferred database schema
-                Map.of(JAKARTA_HBM2DDL_DATABASE_ACTION, CREATE));
+                Map.of(JAKARTA_HBM2DDL_DATABASE_ACTION, UPDATE));
 
         // persist an entity
         inSession(factory, entityManager -> {

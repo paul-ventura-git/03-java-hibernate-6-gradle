@@ -24,7 +24,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/XML/XMLDocument.xml to edit this 
             <property name="jakarta.persistence.jdbc.user"
                       value="postgres"/>
             <property name="jakarta.persistence.jdbc.password"
-                      value=""/>
+                      value="123"/>
 
             <!-- Agroal connection pool -->
             <property name="hibernate.agroal.maxSize"

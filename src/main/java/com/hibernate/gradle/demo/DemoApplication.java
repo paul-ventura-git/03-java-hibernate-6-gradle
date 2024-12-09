@@ -28,11 +28,14 @@ public class DemoApplication {
                 .buildSessionFactory();
 
                 // export the inferred database schema
-                sessionFactory.getSchemaManager().exportMappedObjects(true);
+                try{
+                    sessionFactory.getSchemaManager().exportMappedObjects(true);
+                }catch(Exception e){
+                }
 
                 // persist an entity
                 sessionFactory.inTransaction(session -> {
-                    session.persist(new Book("9781932394153", "Hibernate in Action"));
+                    session.persist(new Book("9781932394153", "Hibernate in Action (from Hibernate native APIs)"));
                 });
 
                 // query data using HQL
@@ -44,7 +47,7 @@ public class DemoApplication {
                 sessionFactory.inSession(session -> {
                     var builder = sessionFactory.getCriteriaBuilder();
                     var query = builder.createQuery(String.class);
-                    var book = query.from(Book.class);
+                    var book = query.from(Book.class); 
                     query.select(builder.concat(builder.concat(book.get(Book_.isbn), builder.literal(": ")),
                             book.get(Book_.title)));
                     out.println(session.createSelectionQuery(query).getSingleResult());
